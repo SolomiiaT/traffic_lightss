@@ -14,7 +14,6 @@ class Mediateka extends StatelessWidget {
             style: TextStyle(
                 fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
           ),
-          Spacer(),
           CircleAvatar(
               backgroundColor: Colors.red,
               backgroundImage: NetworkImage(
