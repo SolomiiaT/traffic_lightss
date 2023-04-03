@@ -19,9 +19,9 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        darkTheme: ThemeData.dark(),
-        home: Scaffold(
+      debugShowCheckedModeBanner: false,
+      darkTheme: ThemeData.dark(),
+      home: Scaffold(
           backgroundColor: Colors.black,
           appBar: AppBar(
             backgroundColor: Colors.black,
@@ -39,18 +39,8 @@ class _MyAppState extends State<MyApp> {
               )
             ],
           ),
-          body: ListView(
-            children: const [
-              Mediateka(),
-              SizedBox(height: 300, child: ListOfSongs()),
-              RecentlyAdded(),
-              Padding(
-                padding: EdgeInsets.only(left: 12.0),
-                child: SizedBox(height: 300, width: 300, child: AlbumGrid()),
-              ),
-            ],
-          ),
-          bottomNavigationBar: const Buttons(),
-        ));
+          body: SizedBox(width: 100, height: 200, child: ListOfSongs()),
+          bottomNavigationBar: const Buttons()),
+    );
   }
 }
