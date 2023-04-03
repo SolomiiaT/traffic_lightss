@@ -12,6 +12,7 @@ class AlbumGrid extends StatelessWidget {
       crossAxisSpacing: 5,
       children: [
         //TODO: refactor this code, make all Images in a sigle style.
+      //ok
         const Image(
             image: NetworkImage(
                 'https://www.pngall.com/wp-content/uploads/4/Thinking-Man-Transparent.png')),
