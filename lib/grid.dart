@@ -35,7 +35,7 @@ class ImageGrid extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: const Image(
-        image: AssetImage('assets/build3.jpg'),
+        image: AssetImage('assets/build4.jpg'),
         fit: BoxFit.cover,
       ),
     );
