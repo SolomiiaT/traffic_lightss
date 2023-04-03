@@ -10,26 +10,34 @@ class AlbumGrid extends StatelessWidget {
       scrollDirection: Axis.vertical,
       mainAxisSpacing: 5,
       crossAxisSpacing: 5,
-      children: [
+      children: const [
         //TODO: refactor this code, make all Images in a sigle style.
-      //ok
-        const Image(
-            image: NetworkImage(
-                'https://www.pngall.com/wp-content/uploads/4/Thinking-Man-Transparent.png')),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(16),
-          child: const Image(
-            image: AssetImage('assets/Pizza.jpg'),
-            fit: BoxFit.cover,
-          ),
-        ),
-        const Image(
-            image: AssetImage(
-                'https://www.pngall.com/wp-content/uploads/4/Thinking-Man-Transparent.png')),
-        const Image(
-            image: AssetImage(
-                'https://www.pngall.com/wp-content/uploads/4/Thinking-Man-Transparent.png'))
+        //ok
+        ImageGrid(assetImage: AssetImage('assets/build1.jpg')),
+        ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
+        ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
+        ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
       ],
+    );
+  }
+}
+
+class ImageGrid extends StatelessWidget {
+  final AssetImage assetImage;
+
+  const ImageGrid({
+    required this.assetImage,
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: const Image(
+        image: AssetImage('assets/build3.jpg'),
+        fit: BoxFit.cover,
+      ),
     );
   }
 }
