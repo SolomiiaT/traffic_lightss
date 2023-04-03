@@ -25,13 +25,16 @@ class _MyAppState extends State<MyApp> {
           backgroundColor: Colors.black,
           appBar: AppBar(
             backgroundColor: Colors.black,
-            actions: const [
+            actions: [
               Padding(
-                padding: EdgeInsets.only(top: 16.0, right: 12),
-                child: Text(
-                  //not able to add GestureDetector
-                  'Змінити',
-                  style: TextStyle(color: Colors.red, fontSize: 14),
+                padding: const EdgeInsets.only(top: 16.0, right: 12),
+                child: GestureDetector(
+                  onTap: () {},
+                  child: const Text(
+                    //not able to add GestureDetector
+                    'Змінити',
+                    style: TextStyle(color: Colors.red, fontSize: 14),
+                  ),
                 ),
               )
             ],
