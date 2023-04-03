@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:traffic_lightss/grid.dart';
+import 'package:traffic_lightss/rows.dart';
 
 class ListOfSongs extends StatelessWidget {
   static final List<Map<String, dynamic>> listOfItemOptions = [
@@ -19,16 +21,21 @@ class ListOfSongs extends StatelessWidget {
     return ListView.builder(
         itemCount: listOfItemOptions.length,
         itemBuilder: ((BuildContext context, index) {
-          return GestureDetector(
-              child: ListTile(
-            onTap: () {},
-            
-            iconColor: Colors.red,
-            textColor: Colors.white,
-            leading: Icon(listOfItemOptions[index]['icon']),
-            title: Text(listOfItemOptions[index]['text']),
-            trailing: const Icon(Icons.arrow_forward),
-          ));
+          return Column(
+            children: [
+              GestureDetector(
+                  child: ListTile(
+                onTap: () {},
+                iconColor: Colors.red,
+                textColor: Colors.white,
+                leading: Icon(listOfItemOptions[index]['icon']),
+                title: Text(listOfItemOptions[index]['text']),
+                trailing: const Icon(Icons.arrow_forward),
+              )),
+              const RecentlyAdded(),
+              const AlbumGrid(),
+            ],
+          );
         }));
   }
 }
