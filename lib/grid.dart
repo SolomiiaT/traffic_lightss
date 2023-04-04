@@ -35,6 +35,8 @@ class ImageGrid extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
       child: const Image(
+        //TODO: here is always build4.jpg used, means you will always see the same image.
+        //? you added assetImage property but never used it.
         image: AssetImage('assets/build4.jpg'),
         fit: BoxFit.cover,
       ),
