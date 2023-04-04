@@ -37,6 +37,7 @@ class ImageGrid extends StatelessWidget {
       child: const Image(
         //TODO: here is always build4.jpg used, means you will always see the same image.
         //? you added assetImage property but never used it.
+        //I used them above. When I delete the one in this code, the code doesnt work
         image: AssetImage('assets/build4.jpg'),
         fit: BoxFit.cover,
       ),
