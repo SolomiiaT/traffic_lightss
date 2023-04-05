@@ -6,6 +6,9 @@ class AlbumGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
+      shrinkWrap: true,
+      //TODO: this one physics is used to not have scroll on the widget
+      physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 2,
       scrollDirection: Axis.vertical,
       mainAxisSpacing: 5,

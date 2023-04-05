@@ -8,8 +8,33 @@ class ListOfSongs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      //TODO: you can ListView only but do not use ListView.builder here. It is not needed. You can use for loop to iterate over listOfItemOptions and add each item to ListView children and then add RecentlyAdded and AlbumGrid to ListView children.
-      children: const [Mediateka(), AlbumGrid(), RecentlyAdded()],
+      children: [
+        const Header(),
+        for (final item in _initListOfItemOptions()) ...[
+          if (item.isVisible) ...[
+            ListTile(
+              leading: Icon(
+                item.icon,
+                color: Colors.pink.shade400,
+              ),
+              title: Text(
+                item.text,
+                style: const TextStyle(color: Colors.white),
+              ),
+              onTap: () {},
+            ),
+            Container(
+              height: 1,
+              color: const Color.fromARGB(255, 108, 255, 211),
+            )
+          ]
+        ],
+        const SizedBox(
+          height: 10,
+        ),
+        const RecentlyAdded(),
+        const AlbumGrid(),
+      ],
     );
   }
 
@@ -23,7 +48,10 @@ class ListOfSongs extends StatelessWidget {
       MenuItem(icon: Icons.music_off, text: 'Підібрано для вас'),
       MenuItem(icon: Icons.music_off_outlined, text: 'Жанри'),
       MenuItem(icon: Icons.album_sharp, text: 'Збірки'),
-      MenuItem(icon: Icons.photo_album_rounded, text: 'Композитори'),
+      MenuItem(
+          icon: Icons.photo_album_rounded,
+          text: 'Композитори',
+          isVisible: false),
       MenuItem(icon: Icons.download, text: 'Викачані')
       //...
       // continue like this, then use this method in build method to get the list. Remove static field at line 8
