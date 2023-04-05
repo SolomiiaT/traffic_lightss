@@ -31,7 +31,7 @@ class _MyAppState extends State<MyApp> {
                 child: GestureDetector(
                   onTap: () {},
                   child: const Text(
-                    //not able to add GestureDetector
+                    //!not able to add GestureDetector
                     'Змінити',
                     style: TextStyle(color: Colors.red, fontSize: 14),
                   ),
@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
               )
             ],
           ),
-          body: SizedBox(width: 100, height: 200, child: ListOfSongs()),
+          body: const ListOfSongs(),
           bottomNavigationBar: const Buttons()),
     );
   }
