@@ -11,9 +11,7 @@ class AlbumGrid extends StatelessWidget {
       mainAxisSpacing: 5,
       crossAxisSpacing: 5,
       children: const [
-        //TODO: refactor this code, make all Images in a sigle style.
-        //ok
-       // GridSingleImage(image: AssetImage('assets/build2.jpg')),
+        ImageGrid(assetImage: AssetImage('assets/build1.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
@@ -34,20 +32,10 @@ class ImageGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(16),
-      child: const Image(
-        //TODO: here is always build4.jpg used, means you will always see the same image.
-        //? you added assetImage property but never used it.
-        //I used them above. When I delete the one in this code, the code doesnt work
-        image: AssetImage('assets/build4.jpg'),
+      child: Image(
+        image: assetImage,
         fit: BoxFit.cover,
       ),
     );
   }
-}
-class GridSingleImage {
-  final Image image;
-  // can be used later to show or hide this item
-
-  const GridSingleImage(
-      {required this.image});
 }
