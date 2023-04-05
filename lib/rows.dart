@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
           Text(
             'MEDIATEKA',
             style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           Spacer(),
           CircleAvatar(

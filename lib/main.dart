@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traffic_lightss/button_nav_bar.dart';
-import 'package:traffic_lightss/grid.dart';
-import 'package:traffic_lightss/items.dart';
+import 'package:traffic_lightss/album_grid.dart';
+import 'package:traffic_lightss/list_view.dart';
 import 'package:traffic_lightss/rows.dart';
 
 void main() {
@@ -28,10 +28,9 @@ class _MyAppState extends State<MyApp> {
             actions: [
               Padding(
                 padding: const EdgeInsets.only(top: 16.0, right: 12),
-                child: GestureDetector(
+                child: InkWell(
                   onTap: () {},
                   child: const Text(
-                    //!not able to add GestureDetector
                     'Змінити',
                     style: TextStyle(color: Colors.red, fontSize: 14),
                   ),

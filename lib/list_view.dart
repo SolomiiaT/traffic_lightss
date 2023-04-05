@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:traffic_lightss/grid.dart';
+import 'package:traffic_lightss/album_grid.dart';
 import 'package:traffic_lightss/rows.dart';
 
 class ListOfSongs extends StatelessWidget {
@@ -15,7 +15,7 @@ class ListOfSongs extends StatelessWidget {
             ListTile(
               leading: Icon(
                 item.icon,
-                color: Colors.pink.shade400,
+                color: Colors.red,
               ),
               title: Text(
                 item.text,
@@ -23,22 +23,21 @@ class ListOfSongs extends StatelessWidget {
               ),
               onTap: () {},
             ),
-            Container(
-              height: 1,
-              color: const Color.fromARGB(255, 108, 255, 211),
-            )
+            Container(height: 1, color: Colors.grey)
           ]
         ],
         const SizedBox(
-          height: 10,
+          height: 15,
         ),
         const RecentlyAdded(),
+        const SizedBox(
+          height: 15,
+        ),
         const AlbumGrid(),
       ],
     );
   }
 
-  //TODO: you can have methods to init your data and use in build method
   List<MenuItem> _initListOfItemOptions() {
     return const [
       MenuItem(icon: Icons.music_note, text: 'Підбірки'),
@@ -48,10 +47,7 @@ class ListOfSongs extends StatelessWidget {
       MenuItem(icon: Icons.music_off, text: 'Підібрано для вас'),
       MenuItem(icon: Icons.music_off_outlined, text: 'Жанри'),
       MenuItem(icon: Icons.album_sharp, text: 'Збірки'),
-      MenuItem(
-          icon: Icons.photo_album_rounded,
-          text: 'Композитори',
-          isVisible: false),
+      MenuItem(icon: Icons.photo_album_rounded, text: 'Композитори'),
       MenuItem(icon: Icons.download, text: 'Викачані')
       //...
       // continue like this, then use this method in build method to get the list. Remove static field at line 8
