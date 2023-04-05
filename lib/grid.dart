@@ -13,7 +13,7 @@ class AlbumGrid extends StatelessWidget {
       children: const [
         //TODO: refactor this code, make all Images in a sigle style.
         //ok
-        ImageGrid(assetImage: AssetImage('assets/build1.jpg')),
+       // GridSingleImage(image: AssetImage('assets/build2.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
         ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
@@ -43,4 +43,11 @@ class ImageGrid extends StatelessWidget {
       ),
     );
   }
+}
+class GridSingleImage {
+  final Image image;
+  // can be used later to show or hide this item
+
+  const GridSingleImage(
+      {required this.image});
 }
