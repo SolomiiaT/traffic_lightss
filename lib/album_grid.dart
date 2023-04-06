@@ -19,16 +19,54 @@ class AlbumGrid extends StatelessWidget {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                 backgroundColor: Color.fromARGB(255, 37, 35, 35),
                 elevation: 5,
-                //!shape: ,
-
+                //!shape: CircleBorder(),
                 content: Text('Good choice!'),
                 duration: Duration(seconds: 2),
               ));
             },
             child:
                 const ImageGrid(assetImage: AssetImage('assets/build1.jpg'))),
-        const ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
-        const ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
+        GestureDetector(
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                        title: const Text('You chose the second album'),
+                        content: const Text('Are you sure?'),
+                        actions: [
+                          TextButton(
+                              onPressed: () => Navigator.pop(context),
+                              child: const Text('yes')),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text('no'),
+                          )
+                        ],
+                      ));
+            },
+            child:
+                const ImageGrid(assetImage: AssetImage('assets/build2.jpg'))),
+        GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return SizedBox(
+                      height: 200,
+                      child: Center(
+                        child: ElevatedButton(
+                            //!what about color here
+                            child: const Text(
+                                'If you want to continue, click here'),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            }),
+                      ),
+                    );
+                  });
+            },
+            child:
+                const ImageGrid(assetImage: AssetImage('assets/build3.jpg'))),
         const ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
       ],
     );
