@@ -25,6 +25,7 @@ class _MyAppState extends State<MyApp> {
       routes: {
         '/': (context) => const ViewingPage(),
         '/album': (context) => const AlbumPage(),
+        '/favourite': (context) => const FavouritePage()
       },
       initialRoute: '/',
     );

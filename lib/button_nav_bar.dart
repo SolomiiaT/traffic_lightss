@@ -15,6 +15,9 @@ class Buttons extends StatelessWidget {
           case 1:
             Navigator.pushNamed(context, '/album');
             break;
+          case 2:
+            Navigator.pushNamed(context, '/favourite');
+            break;
         }
       },
       backgroundColor: Colors.black12,
@@ -26,6 +29,8 @@ class Buttons extends StatelessWidget {
             label: 'Огляд',
             backgroundColor: Colors.red), //!why background doesnt change
         BottomNavigationBarItem(icon: Icon(Icons.album), label: 'Альбоми'),
+        BottomNavigationBarItem(
+            icon: Icon(Icons.favorite_outline_outlined), label: 'Улюблені')
       ],
     );
   }
