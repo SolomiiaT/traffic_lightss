@@ -13,6 +13,10 @@ class ListOfSongs extends StatelessWidget {
         for (final item in _initListOfItemOptions()) ...[
           if (item.isVisible) ...[
             ListTile(
+              trailing: Icon(
+                item.iconForward,
+                color: Colors.grey,
+              ),
               leading: Icon(
                 item.icon,
                 color: Colors.red,
@@ -39,27 +43,56 @@ class ListOfSongs extends StatelessWidget {
   }
 
   List<MenuItem> _initListOfItemOptions() {
-    return const [
-      MenuItem(icon: Icons.music_note, text: 'Підбірки'),
-      MenuItem(icon: Icons.music_note_outlined, text: 'Виконавці'),
-      MenuItem(icon: Icons.note_sharp, text: 'Альбоми'),
-      MenuItem(icon: Icons.single_bed, text: 'Пісні'),
-      MenuItem(icon: Icons.music_off, text: 'Підібрано для вас'),
-      MenuItem(icon: Icons.music_off_outlined, text: 'Жанри'),
-      MenuItem(icon: Icons.album_sharp, text: 'Збірки'),
-      MenuItem(icon: Icons.photo_album_rounded, text: 'Композитори'),
-      MenuItem(icon: Icons.download, text: 'Викачані')
-      //...
-      // continue like this, then use this method in build method to get the list. Remove static field at line 8
+    return [
+      MenuItem(
+          icon: Icons.music_note,
+          text: 'Підбірки',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.music_note_outlined,
+          text: 'Виконавці',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.note_sharp,
+          text: 'Альбоми',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.single_bed,
+          text: 'Пісні',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.music_off,
+          text: 'Підібрано для вас',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.music_off_outlined,
+          text: 'Жанри',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.album_sharp,
+          text: 'Збірки',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.photo_album_rounded,
+          text: 'Композитори',
+          iconForward: Icons.arrow_forward),
+      MenuItem(
+          icon: Icons.download,
+          text: 'Викачані',
+          iconForward: Icons.arrow_forward)
     ];
   }
 }
 
 class MenuItem {
   final IconData icon;
+  final IconData iconForward;
   final String text;
-  final bool isVisible; // can be used later to show or hide this item
+  final bool isVisible;
 
-  const MenuItem(
-      {required this.icon, required this.text, this.isVisible = true});
+  MenuItem(
+      {required this.icon,
+      required this.iconForward,
+      required this.text,
+      this.isVisible = true});
 }
