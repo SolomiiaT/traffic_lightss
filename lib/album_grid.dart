@@ -13,11 +13,23 @@ class AlbumGrid extends StatelessWidget {
       scrollDirection: Axis.vertical,
       mainAxisSpacing: 5,
       crossAxisSpacing: 5,
-      children: const [
-        ImageGrid(assetImage: AssetImage('assets/build1.jpg')),
-        ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
-        ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
-        ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
+      children: [
+        InkWell(
+            onTap: () {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                backgroundColor: Color.fromARGB(255, 37, 35, 35),
+                elevation: 5,
+                //!shape: ,
+
+                content: Text('Good choice!'),
+                duration: Duration(seconds: 2),
+              ));
+            },
+            child:
+                const ImageGrid(assetImage: AssetImage('assets/build1.jpg'))),
+        const ImageGrid(assetImage: AssetImage('assets/build2.jpg')),
+        const ImageGrid(assetImage: AssetImage('assets/build3.jpg')),
+        const ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
       ],
     );
   }
