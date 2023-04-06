@@ -21,8 +21,9 @@ class Buttons extends StatelessWidget {
         }
       },
       backgroundColor: Colors.black12,
-      selectedItemColor: Colors.red,
+      selectedItemColor: Colors.red,//!why selected button doents cange color
       unselectedItemColor: Colors.grey,
+      showSelectedLabels: true,
       items: const [
         BottomNavigationBarItem(
             icon: Icon(Icons.view_agenda_rounded),
