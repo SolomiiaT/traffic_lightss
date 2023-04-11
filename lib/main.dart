@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:traffic_lightss/album_page.dart';
-import 'package:traffic_lightss/button_nav_bar.dart';
-import 'package:traffic_lightss/favourite_page.dart';
-import 'package:traffic_lightss/list_view.dart';
-import 'package:traffic_lightss/viewing_page.dart';
+import 'package:traffic_lightss/album_page/album_page.dart';
+import 'package:traffic_lightss/home_page.dart';
+
+import 'package:traffic_lightss/favourite_page/favourite_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,9 +22,9 @@ class _MyAppState extends State<MyApp> {
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
       routes: {
-        '/': (context) => const ViewingPage(),
-        '/album': (context) => const AlbumPage(),
-        '/favourite': (context) => const FavouritePage()
+        '/': (context) => const HomePage(),
+        '/change': (context) => const FavouritePage(),
+        '/selection': (context) => const AlbumPage()
       },
       initialRoute: '/',
     );

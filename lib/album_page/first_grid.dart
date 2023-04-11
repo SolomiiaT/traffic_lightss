@@ -75,9 +75,22 @@ class FirstGrid extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('data'),
-                Text('dhf'),
-                Text('data'),
+                Text(
+                  'ОНОВЛЕНА ПІДБІРКА',
+                  style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text('Новинки дня',
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
+                Text('Apple Music',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    )),
                 Image(
                     image: AssetImage('assets/flower4.jpg'),
                     width: 200,
@@ -91,9 +104,22 @@ class FirstGrid extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
-                Text('data'),
-                Text('dfhg'),
-                Text('data'),
+                Text(
+                  'ОНОВЛЕНА ПІДБІРКА',
+                  style: TextStyle(
+                      fontSize: 10,
+                      color: Colors.grey,
+                      fontWeight: FontWeight.bold),
+                ),
+                Text('Новинки дня',
+                    style: TextStyle(
+                      fontSize: 18,
+                    )),
+                Text('Apple Music',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.grey,
+                    )),
                 Image(
                     image: AssetImage('assets/flower5.jpg'),
                     width: 200,
