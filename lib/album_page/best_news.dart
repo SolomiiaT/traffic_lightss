@@ -4,14 +4,9 @@ import 'package:scroll_snap_list/scroll_snap_list.dart';
 class BestNews extends StatelessWidget {
   const BestNews({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const NewsList();
-  }
-}
+ 
+  
 
-class NewsList extends StatelessWidget {
-  const NewsList({super.key});
 
   @override
   Widget build(BuildContext context) {

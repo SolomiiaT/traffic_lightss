@@ -14,21 +14,19 @@ class _TrainingPageState extends State<TrainingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: <Widget>[
-          PopupMenuButton<String>(
-            onSelected: (String result) {
-              // code to execute when a menu item is selected
-            },
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              PopupMenuItem<String>(
-                value: 'ViewingPage()',
+        actions: [
+          PopupMenuButton(
+            onSelected: (value) {},
+            itemBuilder: (BuildContext context) => [
+              PopupMenuItem(
+                onTap: () => Navigator.pushNamed(context, '/page3'),
                 child: Text('Page 1'),
               ),
-              PopupMenuItem<String>(
+              PopupMenuItem(
                 value: 'option 2',
                 child: Text('Option 2'),
               ),
-              PopupMenuItem<String>(
+              PopupMenuItem(
                 value: 'option 3',
                 child: Text('Option 3'),
               ),
@@ -36,7 +34,7 @@ class _TrainingPageState extends State<TrainingPage> {
           )
         ],
       ),
-      body: Row(
+      /*body: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
           ScrollSnapList(
@@ -58,7 +56,7 @@ class _TrainingPageState extends State<TrainingPage> {
             padding: const EdgeInsets.symmetric(horizontal: 5),
           ),
         ],
-      ),
+      ),*/
     );
   }
 }
