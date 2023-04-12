@@ -30,7 +30,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: _pages.elementAt(_selectedIndex),
+      body: Stack(
+        children: [
+          _pages.elementAt(_selectedIndex),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  shape: const CircleBorder(),
+                ),
+                onPressed: () async {
+                  int res = 0;
+
+                  res = await getTotalSongsCount();
+                  showDelayedSnackbar(context, res);
+                },
+                // onPressed: () {
+                //   int res = 0;
+
+                //   getTotalSongsCount().then((value) => {res = value});
+                //   final temp = getTotalSongsCount();
+                //   temp.then((value) => {res = value});
+
+                //   showDelayedSnackbar(context, res);
+                // },
+                child: const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Icon(Icons.download),
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black12,
         selectedItemColor: Colors.red,
@@ -50,5 +84,29 @@ class _HomePageState extends State<HomePage> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  //TODO: here are samples of async code
+  void showDelayedSnackbar(BuildContext context, int count) {
+    Future.delayed(const Duration(seconds: 1), () {
+      ScaffoldMessenger.of(context).showSnackBar(
+        //this code ScaffoldMessenger.of(context) is used to show snackbar in the bottom of the screen
+        SnackBar(
+          content: Text('We have $count songs in our library'),
+        ),
+      );
+    });
+  }
+
+  Future<int> getTotalSongsCount() async {
+    await Future.delayed(const Duration(seconds: 1), () {});
+    await getArtistOfTheDay();
+    //is waiting 1 second only
+    return 100;
+  }
+
+  Future<String> getArtistOfTheDay() async {
+    await Future.delayed(const Duration(seconds: 1), () {});
+    return 'The Beatles';
   }
 }
