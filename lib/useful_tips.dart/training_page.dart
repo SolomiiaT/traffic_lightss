@@ -27,7 +27,7 @@ class _TrainingPageState extends State<TrainingPage> {
           }, itemBuilder: (BuildContext context) {
             return [
               const PopupMenuItem(
-                value: 0, //---add this line
+                value: 0, 
                 child: Text('Edit'),
               ),
               const PopupMenuItem(
