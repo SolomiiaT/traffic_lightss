@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:scroll_snap_list/scroll_snap_list.dart';
+import 'package:traffic_lightss/useful_tips.dart/page3.dart';
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
@@ -15,23 +16,30 @@ class _TrainingPageState extends State<TrainingPage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          PopupMenuButton(
-            onSelected: (value) {},
-            itemBuilder: (BuildContext context) => [
-              PopupMenuItem(
-                onTap: () => Navigator.pushNamed(context, '/page3'),
+          PopupMenuButton(onSelected: (result) {
+            if (result == 0) {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const Page3()));
+            } else {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => const Page3()));
+            }
+          }, itemBuilder: (BuildContext context) {
+            return [
+              const PopupMenuItem(
+                value: 0, //---add this line
+                child: Text('Edit'),
+              ),
+              const PopupMenuItem(
+                value: 1,
                 child: Text('Page 1'),
               ),
-              PopupMenuItem(
-                value: 'option 2',
+              const PopupMenuItem(
+                value: 1,
                 child: Text('Option 2'),
               ),
-              PopupMenuItem(
-                value: 'option 3',
-                child: Text('Option 3'),
-              ),
-            ],
-          )
+            ];
+          })
         ],
       ),
       /*body: Row(
