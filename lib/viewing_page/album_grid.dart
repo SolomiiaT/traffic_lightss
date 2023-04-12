@@ -55,11 +55,10 @@ class AlbumGrid extends StatelessWidget {
                         height: 200,
                         child: Center(
                           child: ElevatedButton(
-                              //!what about color here
                               child: const Text(
                                   'If you want to continue, click here'),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/selection');
+                                Navigator.pushNamed(context, '/page2');
                               }),
                         ),
                       );
@@ -70,7 +69,7 @@ class AlbumGrid extends StatelessWidget {
           GestureDetector(
             child: const ImageGrid(assetImage: AssetImage('assets/build4.jpg')),
             onTap: () {
-              Navigator.pushNamed(context, '/selection');
+              Navigator.pushNamed(context, '/page1');
             },
           ),
         ],

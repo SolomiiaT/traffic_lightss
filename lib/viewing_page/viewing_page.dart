@@ -21,7 +21,7 @@ class _ViewingPageState extends State<ViewingPage> {
             padding: const EdgeInsets.only(top: 16.0, right: 12),
             child: InkWell(
               onTap: () {
-                Navigator.pushNamed(context, '/selection');
+                Navigator.pushNamed(context, '/page3');
               },
               child: const Text(
                 'Змінити',

@@ -36,23 +36,28 @@ class _TrainingPageState extends State<TrainingPage> {
           )
         ],
       ),
-      body: ScrollSnapList(
-        itemSize: 50,
-        onItemFocus: (index) {
-          // code to execute when an item is focused
-        },
-        itemBuilder: (context, index) {
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image(
-              image: AssetImage(imageAssetPaths[index]),
-              fit: BoxFit.fill,
-            ),
-          );
-        },
-        itemCount: imageAssetPaths.length,
-        dynamicItemSize: true,
-        padding: const EdgeInsets.symmetric(horizontal: 5),
+      body: Row(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          ScrollSnapList(
+            itemSize: 50,
+            onItemFocus: (index) {
+              // code to execute when an item is focused
+            },
+            itemBuilder: (context, index) {
+              return ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image(
+                  image: AssetImage(imageAssetPaths[index]),
+                  fit: BoxFit.fill,
+                ),
+              );
+            },
+            itemCount: imageAssetPaths.length,
+            dynamicItemSize: true,
+            padding: const EdgeInsets.symmetric(horizontal: 5),
+          ),
+        ],
       ),
     );
   }
