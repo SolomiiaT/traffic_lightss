@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:traffic_lightss/favourite_page/favourite_page.dart';
 import 'package:traffic_lightss/album_page/album_page.dart';
-import 'package:traffic_lightss/useful_tips.dart/training_page.dart';
+import 'package:traffic_lightss/training_page/training_page.dart';
 import 'package:traffic_lightss/viewing_page/viewing_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -110,3 +110,45 @@ class _HomePageState extends State<HomePage> {
     return 'The Beatles';
   }
 }
+
+/* TASK 1
+Future<String> task1 = Future.delayed(const Duration(seconds: 1),
+   () {
+  return 'String';
+});
+
+
+ task1.then((value){
+  print (value);
+});*/
+
+/*TASK 2
+
+Future<String> task1 ()async{
+  await Future.delayed(const Duration(seconds: 1),
+  await task2();
+   () {
+  return 'String'; 
+});
+}
+
+ Future<String> task2 () async {
+  await Future.delayed(const Duration(seconds: 1), () {});
+    return 'String 2';
+ }*/
+
+ /*TASK 3
+
+ Future<String> errorTask = Future.delayed(const Duration(seconds: 1),
+ () {
+  return 'String3';
+  throw 'NO String3';
+ });
+
+errorTask().then(value){
+  print ('done');
+})
+
+.catchError((error)=>print(error));
+print ('error ocuried');*/
+

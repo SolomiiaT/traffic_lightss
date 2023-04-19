@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:traffic_lightss/album_page/best_news.dart';
 import 'package:traffic_lightss/album_page/first_grid.dart';
 import 'package:traffic_lightss/album_page/more_interesting.dart';
-import 'package:traffic_lightss/useful_tips.dart/training_page.dart';
+import 'package:traffic_lightss/training_page/training_page.dart';
 
 class AlbumPage extends StatelessWidget {
   const AlbumPage({super.key});

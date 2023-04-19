@@ -4,8 +4,6 @@ import 'package:scroll_snap_list/scroll_snap_list.dart';
 class BestNews extends StatelessWidget {
   const BestNews({super.key});
 
- 
-  
 
 
   @override
