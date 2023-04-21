@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:traffic_lightss/album_page/best_news.dart';
 import 'package:traffic_lightss/album_page/first_grid.dart';
 import 'package:traffic_lightss/album_page/more_interesting.dart';
+import 'package:traffic_lightss/training_page/additional_page1.dart';
 import 'package:traffic_lightss/training_page/training_page.dart';
 
 class AlbumPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class AlbumPage extends StatelessWidget {
               FirstText(),
               FirstGrid(),
               MoreInteresting(),
-              //SizedBox(height: 100, width: 100, child: BestNews())
+              NewsBest()
             ],
           ),
         ));
