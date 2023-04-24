@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Header extends StatelessWidget {
-  const Header({super.key});
+  const Header({super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
           Text(
             'MEDIATEKA',
             style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
           ),
           Spacer(),
           CircleAvatar(
@@ -24,6 +24,7 @@ class Header extends StatelessWidget {
     );
   }
 }
+
 
 class RecentlyAdded extends StatelessWidget {
   const RecentlyAdded({super.key});

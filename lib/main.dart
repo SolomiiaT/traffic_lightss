@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:traffic_lightss/button_nav_bar.dart';
-import 'package:traffic_lightss/grid.dart';
-import 'package:traffic_lightss/items.dart';
-import 'package:traffic_lightss/rows.dart';
+import 'package:traffic_lightss/album_page/album_page.dart';
+import 'package:traffic_lightss/home_page.dart';
+
+import 'package:traffic_lightss/favourite_page/favourite_page.dart';
+import 'package:traffic_lightss/useful_tips.dart/page1.dart';
+import 'package:traffic_lightss/useful_tips.dart/page2.dart';
+import 'package:traffic_lightss/useful_tips.dart/page3.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,26 +24,15 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       darkTheme: ThemeData.dark(),
-      home: Scaffold(
-          backgroundColor: Colors.black,
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(top: 16.0, right: 12),
-                child: GestureDetector(
-                  onTap: () {},
-                  child: const Text(
-                    //!not able to add GestureDetector
-                    'Змінити',
-                    style: TextStyle(color: Colors.red, fontSize: 14),
-                  ),
-                ),
-              )
-            ],
-          ),
-          body: const ListOfSongs(),
-          bottomNavigationBar: const Buttons()),
+      routes: {
+        '/': (context) => const HomePage(),
+        '/change': (context) => const FavouritePage(),
+        '/selection': (context) => const AlbumPage(),
+        '/page1': (context) => Page1(),
+        '/page2': (context) => Page2(),
+        '/page3': (context) => const Page3()
+      },
+      initialRoute: '/',
     );
   }
 }
